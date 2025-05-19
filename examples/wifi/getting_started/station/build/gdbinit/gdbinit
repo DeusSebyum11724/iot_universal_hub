@@ -1,0 +1,2 @@
+source /Users/asbri/esp-idf/examples/wifi/getting_started/station/build/gdbinit/symbols
+source /Users/asbri/esp-idf/examples/wifi/getting_started/station/build/gdbinit/connect

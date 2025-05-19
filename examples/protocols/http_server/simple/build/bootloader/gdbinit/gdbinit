@@ -1,0 +1,2 @@
+source /Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader/gdbinit/symbols
+source /Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader/gdbinit/connect

@@ -1,0 +1,2 @@
+source /Users/asbri/esp-idf/examples/get-started/hello_world/build/bootloader/gdbinit/symbols
+source /Users/asbri/esp-idf/examples/get-started/hello_world/build/bootloader/gdbinit/connect

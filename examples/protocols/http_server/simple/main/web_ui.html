@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>ESP32 Smart Home Hub</title>
+  <style>
+    body { font-family: sans-serif; background: #f2f3f7; padding: 2em; }
+    .card { background: white; padding: 1.5em; border-radius: 1em; box-shadow: 0 0 12px #ccc; margin-bottom: 2em; max-width: 400px; }
+    .device-name { font-weight: bold; font-size: 1.2em; }
+    .toggle { width: 50px; height: 26px; background: #ddd; border-radius: 13px; position: relative; cursor: pointer; transition: background 0.3s; }
+    .toggle.on { background: #36d17e; }
+    .toggle-circle { width: 22px; height: 22px; border-radius: 50%; background: white; position: absolute; top: 2px; left: 2px; transition: left 0.3s; }
+    .toggle.on .toggle-circle { left: 26px; }
+    .row { display: flex; align-items: center; justify-content: space-between; margin: 1em 0; }
+    .slider { width: 100%; }
+    #log { background: #eee; padding: 1em; border-radius: 0.5em; white-space: pre-wrap; font-size: 0.9em; }
+    button { padding: 0.5em 1em; margin-right: 0.5em; border: none; border-radius: 0.5em; background: #007aff; color: white; cursor: pointer; }
+    button:hover { background: #005bb5; }
+  </style>
+</head>
+<body>
+  <h1>ESP32 Smart Hub</h1>
+  <button onclick="discover()">Discover</button>
+  <button onclick="pair()">Pair</button>
+  <button onclick="listDevices()">List Devices</button>
+  <div id="devices"></div>
+  <div id="log">[LOG]</div>
+
+  <script>
+    let devices = {};
+
+    function log(txt) {
+      document.getElementById('log').innerText += '\\n' + txt;
+    }
+
+    function discover() {
+      fetch('/discover', { method: 'POST' })
+        .then(r => r.text())
+        .then(t => log('Discovered: ' + t))
+        .catch(e => log('Discover error: ' + e));
+    }
+
+    function pair() {
+      fetch('/pair', { method: 'POST' })
+        .then(r => r.text())
+        .then(t => log('Paired: ' + t))
+        .catch(e => log('Pair error: ' + e));
+    }
+
+    function listDevices() {
+      fetch('/list', { method: 'POST' })
+        .then(r => r.json())
+        .then(json => {
+          devices = json;
+          renderDevices();
+          log('Devices loaded');
+        })
+        .catch(e => log('List error: ' + e));
+    }
+
+    function renderDevices() {
+      const container = document.getElementById('devices');
+      container.innerHTML = '';
+      for (const id in devices) {
+        const d = devices[id];
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
+          <div class="device-name">${d.name}</div>
+          <div class="row">
+            <div class="toggle ${d.state.on ? 'on' : ''}" onclick="toggleDevice('${id}')">
+              <div class="toggle-circle"></div>
+            </div>
+            <span>${d.state.on ? 'On' : 'Off'}</span>
+          </div>
+          <div class="row">
+            <input type="range" min="1" max="254" value="${d.state.bri}" class="slider"
+              oninput="setBri('${id}', this.value)">
+            <span>${Math.round(d.state.bri / 254 * 100)}%</span>
+          </div>
+        `;
+        container.appendChild(card);
+      }
+    }
+
+    function toggleDevice(id) {
+      const d = devices[id];
+      const newState = !d.state.on;
+      log(`Toggle ${d.name} to ${newState ? 'ON' : 'OFF'}`);
+      sendState(id, { on: newState });
+    }
+
+    function setBri(id, val) {
+      log(`Set brightness of ${devices[id].name} to ${val}`);
+      sendState(id, { bri: parseInt(val) });
+    }
+
+    function sendState(id, state) {
+      fetch('/set', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, state })
+      })
+      .then(r => r.text())
+      .then(t => {
+        log('Set response: ' + t);
+        setTimeout(listDevices, 500);
+      })
+      .catch(e => log('Set error: ' + e));
+    }
+  </script>
+</body>
+</html>

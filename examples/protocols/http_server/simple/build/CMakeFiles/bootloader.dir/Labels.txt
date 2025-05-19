@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/CMakeFiles/bootloader
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/CMakeFiles/bootloader.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/CMakeFiles/bootloader-complete.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/asbri/esp-idf/examples/protocols/http_server/simple/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
