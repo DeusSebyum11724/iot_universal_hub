@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find Hue Hubs</title>
+  <style>
+    body {
+      background-color: #1e1e2f;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 60px;
+    }
+    h1 { margin-bottom: 40px; }
+    .btn {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      background: #3a3af3;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #hub-ip {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    #status {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Find Home Hubs</h1>
+
+  <button class="btn" onclick="findHubs()">Find Hue Hubs</button>
+  <p id="hub-ip">No hub found yet.</p>
+
+  <button class="btn" onclick="connectHue()">Connect Hue (Press Button on Bridge)</button>
+
+  <p id="status">Status: Idle</p>
+
+  <script>
+    let lastHubIP = null;
+
+    function findHubs() {
+      document.getElementById('status').textContent = "🔍 Searching for Hue Bridge...";
+
+      fetch('/find_hubs')
+        .then(response => response.json())
+        .then(data => {
+          if (data.ip) {
+            lastHubIP = data.ip;
+            document.getElementById('hub-ip').textContent = "Hue Bridge IP: " + data.ip;
+            document.getElementById('status').textContent = "✅ Found Hue Bridge!";
+          } else {
+            document.getElementById('status').textContent = "❌ No Hue Bridge found.";
+          }
+        })
+        .catch(() => {
+          document.getElementById('status').textContent = "❌ Error searching for hub.";
+        });
+    }
+
+    function connectHue() {
+      if (!lastHubIP) {
+        document.getElementById('status').textContent = "⚠️ Please find the Hue Bridge first.";
+        return;
+      }
+
+      document.getElementById('status').textContent = "🔐 Sending pairing request... Press the button on your Hue Bridge now!";
+
+      fetch('/connect_hue', {
+        method: 'POST'
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById('status').textContent = "✅ Paired with Hue Bridge!";
+        } else {
+          document.getElementById('status').textContent = "❌ Failed to pair with Hue.";
+        }
+      }).catch(() => {
+        document.getElementById('status').textContent = "❌ Error during pairing request.";
+      });
+    }
+  </script>
+</body>
+</html>

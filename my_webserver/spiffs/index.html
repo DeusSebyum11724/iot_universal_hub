@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arty Interface</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e2f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 60px;
+      min-height: 100vh;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .btn {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background: #3a3af3;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .card {
+      margin-top: 20px;
+      padding: 30px;
+      background: #2a2a3d;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+    }
+    #status, #hub-ip {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div id="step1" class="card">
+    <h1>Welcome to Arty</h1>
+    <button class="btn" onclick="startWifi()">Let's connect →</button>
+  </div>
+
+  <div id="step2" class="card hidden">
+    <h2>Connect ESP32 to Home Wi-Fi</h2>
+    <input id="ssid" type="text" placeholder="Wi-Fi name (SSID)" required /><br />
+    <input id="password" type="password" placeholder="Wi-Fi password" required /><br />
+    <button class="btn" onclick="connectWifi()">Connect</button>
+    <p id="status"></p>
+  </div>
+
+  <div id="step3" class="card hidden">
+    <h2>Find Home Hubs</h2>
+    <button class="btn" onclick="findHubs()">Find Hue Hubs</button>
+    <p id="hub-ip">No hub found yet.</p>
+
+    <button class="btn" onclick="connectHue()">Connect Hue (Press Button on Bridge)</button>
+    <p id="hub-status">Status: Idle</p>
+  </div>
+
+  <script>
+    let lastHubIP = null;
+
+    function startWifi() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.remove('hidden');
+    }
+
+    function connectWifi() {
+      const ssid = document.getElementById('ssid').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const status = document.getElementById('status');
+
+      if (!ssid || !password) {
+        status.textContent = "Please enter both SSID and password.";
+        return;
+      }
+
+      status.textContent = "Sending credentials...";
+
+      fetch('/connect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ssid, password })
+      }).then(response => {
+        if (response.ok) {
+          status.textContent = "Connecting to Wi-Fi... Please wait.";
+          setTimeout(() => {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+          }, 4000);
+        } else {
+          status.textContent = "Failed to send credentials.";
+        }
+      }).catch(() => {
+        status.textContent = "Error sending request. Try again.";
+      });
+    }
+
+    function findHubs() {
+      const hubStatus = document.getElementById('hub-status');
+      hubStatus.textContent = "Searching for Hue Bridge...";
+
+      fetch('/find_hubs')
+        .then(response => response.json())
+        .then(data => {
+          if (data.ip) {
+            lastHubIP = data.ip;
+            document.getElementById('hub-ip').textContent = "Hue Bridge IP: " + data.ip;
+            hubStatus.textContent = "Found Hue Bridge!";
+          } else {
+            hubStatus.textContent = "No Hue Bridge found.";
+          }
+        })
+        .catch(() => {
+          hubStatus.textContent = "Error searching for hub.";
+        });
+    }
+
+    function connectHue() {
+      const hubStatus = document.getElementById('hub-status');
+
+      if (!lastHubIP) {
+        hubStatus.textContent = "Please find the Hue Bridge first.";
+        return;
+      }
+
+      hubStatus.textContent = "Sending pairing request... Press the button on your Hue Bridge now!";
+
+      fetch('/connect_hue', {
+        method: 'POST'
+      }).then(response => {
+        if (response.ok) {
+          hubStatus.textContent = "Paired with Hue Bridge!";
+        } else {
+          hubStatus.textContent = "Failed to pair with Hue.";
+        }
+      }).catch(() => {
+        hubStatus.textContent = "Error during pairing request.";
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+Command: /Users/asbri/.espressif/python_env/idf6.0_py3.13_env/bin/python /Users/asbri/esp-idf/tools/idf_monitor.py -p /dev/cu.SLAB_USBtoUART -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/asbri/esp-idf/my_webserver/build/my_webserver.elf /Users/asbri/esp-idf/my_webserver/build/bootloader/bootloader.elf -m '/Users/asbri/.espressif/python_env/idf6.0_py3.13_env/bin/python' '/Users/asbri/esp-idf/tools/idf.py' '-p' '/dev/cu.SLAB_USBtoUART'
+tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+eA%]A�0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF 35ea2ee0-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 30 2025 16:33:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot:  3 spiffs           Unknown data     01 82 00110000 000f0000[0m
+[0;32mI (84) boot: End of partition table[0m
+[0;32mI (88) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20364h (131940) map[0m
+[0;32mI (140) esp_image: segment 1: paddr=0003038c vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (141) esp_image: segment 2: paddr=000303b4 vaddr=3ffb0000 size=03e80h ( 16000) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=0003423c vaddr=40080000 size=0bddch ( 48604) load[0m
+[0;32mI (171) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=acdb0h (708016) map[0m
+[0;32mI (413) esp_image: segment 5: paddr=000ecdd8 vaddr=4008bddc size=0bf44h ( 48964) load[0m
+[0;32mI (444) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (444) boot: Disabling RNG early entropy source...[0m
+[0;32mI (454) cpu_start: Multicore app[0m
+[0;32mI (463) cpu_start: Pro cpu start user code[0m
+[0;32mI (463) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) app_init: Application information:[0m
+[0;32mI (463) app_init: Project name:     my_webserver[0m
+[0;32mI (467) app_init: App version:      35ea2ee0-dirty[0m
+[0;32mI (472) app_init: Compile time:     May 30 2025 16:33:30[0m
+[0;32mI (477) app_init: ELF file SHA256:  4787a415e...[0m
+[0;32mI (481) app_init: ESP-IDF:          35ea2ee0-dirty[0m
+[0;32mI (485) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (489) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (493) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (497) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (504) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (508) heap_init: At 3FFB85B0 len 00027A50 (158 KiB): DRAM[0m
+[0;32mI (514) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (519) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (525) heap_init: At 40097D20 len 000082E0 (32 KiB): IRAM[0m
+[0;32mI (531) spi_flash: detected chip: generic[0m
+[0;32mI (534) spi_flash: flash io: dio[0m
+[0;33mW (537) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (570) webserver: 📂 Montare SPIFFS...[0m
+[0;32mI (640) webserver: ✅ SPIFFS montat[0m
+[0;32mI (640) webserver: 📦 Citire NVS: ssid='' (ESP_ERR_NVS_INVALID_HANDLE), pass='' (ESP_ERR_NVS_INVALID_HANDLE)[0m
+[0;32mI (660) wifi:wifi driver task: 3ffc0e24, prio:23, stack:6656, core=0[0m
+[0;32mI (660) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (660) wifi:wifi certification version: v7.0[0m
+[0;32mI (660) wifi:config NVS flash: enabled[0m
+[0;32mI (660) wifi:config nano formatting: disabled[0m
+[0;32mI (670) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (670) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (680) wifi:Init management short buffer num: 32[0m
+[0;32mI (680) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (680) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (690) wifi:Init static rx buffer num: 10[0m
+[0;32mI (690) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (700) wifi_init: rx ba win: 6[0m
+[0;32mI (700) wifi_init: accept mbox: 6[0m
+[0;32mI (700) wifi_init: tcpip mbox: 32[0m
+[0;32mI (700) wifi_init: udp mbox: 6[0m
+[0;32mI (710) wifi_init: tcp mbox: 6[0m
+[0;32mI (710) wifi_init: tcp tx win: 5760[0m
+[0;32mI (710) wifi_init: tcp rx win: 5760[0m
+[0;32mI (720) wifi_init: tcp mss: 1440[0m
+[0;32mI (720) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (720) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (990) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;33mW (990) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (1060) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (1080) wifi:mode : softAP (cc:db:a7:68:6f:f1)[0m
+[0;32mI (1080) wifi:Total power save buffer number: 16[0m
+[0;32mI (1080) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1080) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1090) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1100) webserver: 🌐 Web server pornit pe http://192.168.4.1[0m
+[0;32mI (1100) webserver: 📡 AP activat: ESP_Arty[0m
+[0;32mI (1100) main_task: Returned from app_main()[0m
+[0;32mI (11020) wifi:new:<1,0>, old:<1,1>, ap:<1,0>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (11020) wifi:station: 50:a6:d8:99:73:66 join, AID=1, bgn, 20[0m
+[0;32mI (11120) wifi:<ba-add>idx:2 (ifx:1, 50:a6:d8:99:73:66), tid:6, ssn:0, winSize:64[0m
+[0;32mI (12150) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (13710) wifi:new:<1,0>, old:<1,0>, ap:<1,0>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13720) wifi:station: be:21:ec:bd:3f:3a join, AID=2, bgn, 20[0m
+[0;32mI (13840) wifi:<ba-add>idx:3 (ifx:1, be:21:ec:bd:3f:3a), tid:0, ssn:2, winSize:64[0m
+[0;32mI (13850) wifi:<ba-add>idx:4 (ifx:1, 50:a6:d8:99:73:66), tid:0, ssn:2, winSize:64[0m
+[0;32mI (14990) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.3[0m
+[0;33mW (19110) httpd_uri: httpd_uri: URI '/favicon.ico' not found[0m
+[0;33mW (19110) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (31590) webserver: 📥 Salvăm: ssid='Asbri's iPhone', pass='EC6E028072'[0m
+[0;32mI (31590) webserver: ♻️ Config salvat, restart în 1s...[0m
+[0;32mI (32590) wifi:station: 50:a6:d8:99:73:66 leave, AID = 1, reason = 2, bss_flags is 691299, bss:0x3ffb9964[0m
+[0;32mI (32590) wifi:new:<1,0>, old:<1,0>, ap:<1,0>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (32590) wifi:<ba-del>idx:4, tid:0[0m
+[0;32mI (32600) wifi:<ba-del>idx:2, tid:6[0m
+[0;32mI (32600) wifi:station: be:21:ec:bd:3f:3a leave, AID = 2, reason = 2, bss_flags is 691299, bss:0x3ffba170[0m
+[0;32mI (32610) wifi:new:<1,0>, old:<1,0>, ap:<1,0>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (32620) wifi:<ba-del>idx:3, tid:0[0m
+[0;32mI (32870) wifi:flush txq[0m
+[0;32mI (32870) wifi:stop sw txq[0m
+[0;32mI (32870) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF 35ea2ee0-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 30 2025 16:33:35[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot:  3 spiffs           Unknown data     01 82 00110000 000f0000[0m
+[0;32mI (84) boot: End of partition table[0m
+[0;32mI (88) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20364h (131940) map[0m
+[0;32mI (140) esp_image: segment 1: paddr=0003038c vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (140) esp_image: segment 2: paddr=000303b4 vaddr=3ffb0000 size=03e80h ( 16000) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=0003423c vaddr=40080000 size=0bddch ( 48604) load[0m
+[0;32mI (171) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=acdb0h (708016) map[0m
+[0;32mI (413) esp_image: segment 5: paddr=000ecdd8 vaddr=4008bddc size=0bf44h ( 48964) load[0m
+[0;32mI (444) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (444) boot: Disabling RNG early entropy source...[0m
+[0;32mI (454) cpu_start: Multicore app[0m
+[0;32mI (462) cpu_start: Pro cpu start user code[0m
+[0;32mI (462) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) app_init: Application information:[0m
+[0;32mI (463) app_init: Project name:     my_webserver[0m
+[0;32mI (467) app_init: App version:      35ea2ee0-dirty[0m
+[0;32mI (471) app_init: Compile time:     May 30 2025 16:33:30[0m
+[0;32mI (476) app_init: ELF file SHA256:  4787a415e...[0m
+[0;32mI (481) app_init: ESP-IDF:          35ea2ee0-dirty[0m
+[0;32mI (485) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (489) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (493) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (497) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (503) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (508) heap_init: At 3FFB85B0 len 00027A50 (158 KiB): DRAM[0m
+[0;32mI (514) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (519) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (524) heap_init: At 40097D20 len 000082E0 (32 KiB): IRAM[0m
+[0;32mI (531) spi_flash: detected chip: generic[0m
+[0;32mI (533) spi_flash: flash io: dio[0m
+[0;33mW (536) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (580) webserver: 📂 Montare SPIFFS...[0m
+[0;32mI (650) webserver: ✅ SPIFFS montat[0m
+[0;32mI (660) webserver: 📦 Citire NVS: ssid='Asbri's iPhone' (ESP_OK), pass='EC6E028072' (ESP_OK)[0m
+[0;32mI (670) wifi:wifi driver task: 3ffc0eb4, prio:23, stack:6656, core=0[0m
+[0;32mI (690) wifi:wifi firmware version: cdb304370[0m
+[0;32mI (690) wifi:wifi certification version: v7.0[0m
+[0;32mI (690) wifi:config NVS flash: enabled[0m
+[0;32mI (690) wifi:config nano formatting: disabled[0m
+[0;32mI (690) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (700) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (700) wifi:Init management short buffer num: 32[0m
+[0;32mI (700) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (710) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (710) wifi:Init static rx buffer num: 10[0m
+[0;32mI (720) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (720) wifi_init: rx ba win: 6[0m
+[0;32mI (720) wifi_init: accept mbox: 6[0m
+[0;32mI (730) wifi_init: tcpip mbox: 32[0m
+[0;32mI (730) wifi_init: udp mbox: 6[0m
+[0;32mI (730) wifi_init: tcp mbox: 6[0m
+[0;32mI (730) wifi_init: tcp tx win: 5760[0m
+[0;32mI (740) wifi_init: tcp rx win: 5760[0m
+[0;32mI (740) wifi_init: tcp mss: 1440[0m
+[0;32mI (740) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (750) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (750) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (780) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (860) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (890) wifi:mode : sta (cc:db:a7:68:6f:f0)[0m
+[0;32mI (890) wifi:enable tsf[0m
+[0;32mI (900) webserver: 📶 STA conectare la SSID: 'Asbri's iPhone'[0m
+[0;33mW (3310) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;32mI (3900) webserver: 🌐 Web server pornit pe http://192.168.4.1[0m
+[0;32mI (3900) main_task: Returned from app_main()[0m
+[0;33mW (5720) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (8140) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (10550) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (12970) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (15380) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (17800) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (20210) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (22620) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (25040) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (27450) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (29870) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (32280) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (34690) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (37110) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (39520) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (41940) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (44350) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (46770) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (49180) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (51590) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (54010) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (56420) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (58840) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (61250) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (63670) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (66080) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (68490) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (70910) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (73320) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (75740) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (78150) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (80570) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (82980) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (85390) webserver: ⚠️ WiFi deconectat, reconectăm...[0m
+[0;33mW (87810) webserver: ⚠️ W

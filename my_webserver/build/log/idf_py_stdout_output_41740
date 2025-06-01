@@ -1,0 +1,142 @@
+Command: ninja flash
+[0/1] Re-running CMake...
+-- Component directory /Users/asbri/esp-idf/components/esp-protocols does not contain a CMakeLists.txt file. No component will be added
+-- Component directory /Users/asbri/esp-idf/components/hue does not contain a CMakeLists.txt file. No component will be added
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32
+NOTICE: Processing 1 dependencies:
+NOTICE: [1/1] idf (6.0.0)
+-- Project sdkconfig file /Users/asbri/esp-idf/my_webserver/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- USING O3
+-- App "my_webserver" version: 35ea2ee0-dirty
+-- Adding linker script /Users/asbri/esp-idf/my_webserver/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/asbri/esp-idf/my_webserver/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-reent-funcs.ld
+-- Adding linker script /Users/asbri/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_bitscrambler esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_twai esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mdns mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread rt sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /Users/asbri/esp-idf/components/app_trace /Users/asbri/esp-idf/components/app_update /Users/asbri/esp-idf/components/bootloader /Users/asbri/esp-idf/components/bootloader_support /Users/asbri/esp-idf/components/bt /Users/asbri/esp-idf/components/cmock /Users/asbri/esp-idf/components/console /Users/asbri/esp-idf/components/cxx /Users/asbri/esp-idf/components/driver /Users/asbri/esp-idf/components/efuse /Users/asbri/esp-idf/components/esp-tls /Users/asbri/esp-idf/components/esp_adc /Users/asbri/esp-idf/components/esp_app_format /Users/asbri/esp-idf/components/esp_bootloader_format /Users/asbri/esp-idf/components/esp_coex /Users/asbri/esp-idf/components/esp_common /Users/asbri/esp-idf/components/esp_driver_ana_cmpr /Users/asbri/esp-idf/components/esp_driver_bitscrambler /Users/asbri/esp-idf/components/esp_driver_cam /Users/asbri/esp-idf/components/esp_driver_dac /Users/asbri/esp-idf/components/esp_driver_gpio /Users/asbri/esp-idf/components/esp_driver_gptimer /Users/asbri/esp-idf/components/esp_driver_i2c /Users/asbri/esp-idf/components/esp_driver_i2s /Users/asbri/esp-idf/components/esp_driver_isp /Users/asbri/esp-idf/components/esp_driver_jpeg /Users/asbri/esp-idf/components/esp_driver_ledc /Users/asbri/esp-idf/components/esp_driver_mcpwm /Users/asbri/esp-idf/components/esp_driver_parlio /Users/asbri/esp-idf/components/esp_driver_pcnt /Users/asbri/esp-idf/components/esp_driver_ppa /Users/asbri/esp-idf/components/esp_driver_rmt /Users/asbri/esp-idf/components/esp_driver_sdio /Users/asbri/esp-idf/components/esp_driver_sdm /Users/asbri/esp-idf/components/esp_driver_sdmmc /Users/asbri/esp-idf/components/esp_driver_sdspi /Users/asbri/esp-idf/components/esp_driver_spi /Users/asbri/esp-idf/components/esp_driver_touch_sens /Users/asbri/esp-idf/components/esp_driver_tsens /Users/asbri/esp-idf/components/esp_driver_twai /Users/asbri/esp-idf/components/esp_driver_uart /Users/asbri/esp-idf/components/esp_driver_usb_serial_jtag /Users/asbri/esp-idf/components/esp_eth /Users/asbri/esp-idf/components/esp_event /Users/asbri/esp-idf/components/esp_gdbstub /Users/asbri/esp-idf/components/esp_hid /Users/asbri/esp-idf/components/esp_http_client /Users/asbri/esp-idf/components/esp_http_server /Users/asbri/esp-idf/components/esp_https_ota /Users/asbri/esp-idf/components/esp_https_server /Users/asbri/esp-idf/components/esp_hw_support /Users/asbri/esp-idf/components/esp_lcd /Users/asbri/esp-idf/components/esp_local_ctrl /Users/asbri/esp-idf/components/esp_mm /Users/asbri/esp-idf/components/esp_netif /Users/asbri/esp-idf/components/esp_netif_stack /Users/asbri/esp-idf/components/esp_partition /Users/asbri/esp-idf/components/esp_phy /Users/asbri/esp-idf/components/esp_pm /Users/asbri/esp-idf/components/esp_psram /Users/asbri/esp-idf/components/esp_ringbuf /Users/asbri/esp-idf/components/esp_rom /Users/asbri/esp-idf/components/esp_security /Users/asbri/esp-idf/components/esp_system /Users/asbri/esp-idf/components/esp_timer /Users/asbri/esp-idf/components/esp_vfs_console /Users/asbri/esp-idf/components/esp_wifi /Users/asbri/esp-idf/components/espcoredump /Users/asbri/esp-idf/components/esptool_py /Users/asbri/esp-idf/components/fatfs /Users/asbri/esp-idf/components/freertos /Users/asbri/esp-idf/components/hal /Users/asbri/esp-idf/components/heap /Users/asbri/esp-idf/components/http_parser /Users/asbri/esp-idf/components/idf_test /Users/asbri/esp-idf/components/ieee802154 /Users/asbri/esp-idf/components/json /Users/asbri/esp-idf/components/log /Users/asbri/esp-idf/components/lwip /Users/asbri/esp-idf/my_webserver/main /Users/asbri/esp-idf/components/mbedtls /Users/asbri/esp-idf/components/mdns /Users/asbri/esp-idf/components/mqtt /Users/asbri/esp-idf/components/newlib /Users/asbri/esp-idf/components/nvs_flash /Users/asbri/esp-idf/components/nvs_sec_provider /Users/asbri/esp-idf/components/openthread /Users/asbri/esp-idf/components/partition_table /Users/asbri/esp-idf/components/perfmon /Users/asbri/esp-idf/components/protobuf-c /Users/asbri/esp-idf/components/protocomm /Users/asbri/esp-idf/components/pthread /Users/asbri/esp-idf/components/rt /Users/asbri/esp-idf/components/sdmmc /Users/asbri/esp-idf/components/soc /Users/asbri/esp-idf/components/spi_flash /Users/asbri/esp-idf/components/spiffs /Users/asbri/esp-idf/components/tcp_transport /Users/asbri/esp-idf/components/ulp /Users/asbri/esp-idf/components/unity /Users/asbri/esp-idf/components/usb /Users/asbri/esp-idf/components/vfs /Users/asbri/esp-idf/components/wear_levelling /Users/asbri/esp-idf/components/wifi_provisioning /Users/asbri/esp-idf/components/wpa_supplicant /Users/asbri/esp-idf/components/xtensa
+-- Configuring done (2.1s)
+-- Generating done (0.3s)
+-- Build files have been written to: /Users/asbri/esp-idf/my_webserver/build
+[1/10] cd /Users/asbri/esp-idf/my_webserver/build && /Users/asbri/.espressif/python_env/idf6.0_py3.13_env/bin/python /Users/asbri/esp-idf/components/spiffs/spiffsgen.py 0xf0000 /Users/asbri/esp-idf/my_webserver/spiffs /Users/asbri/esp-idf/my_webserver/build/spiffs.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[2/10] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Component directory /Users/asbri/esp-idf/components/esp-protocols does not contain a CMakeLists.txt file. No component will be added
+-- Component directory /Users/asbri/esp-idf/components/hue does not contain a CMakeLists.txt file. No component will be added
+fatal: no submodule mapping found in .gitmodules for path 'components/esp-protocols'
+-- Minimal build - OFF
+-- Building ESP-IDF components for target esp32
+NOTICE: Processing 1 dependencies:
+NOTICE: [1/1] idf (6.0.0)
+-- Project sdkconfig file /Users/asbri/esp-idf/my_webserver/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Adding linker script /Users/asbri/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Bootloader project name: "bootloader" version: 1
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/asbri/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+-- Adding linker script /Users/asbri/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
+-- Adding linker script /Users/asbri/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_bootloader_format esp_common esp_hw_support esp_rom esp_security esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /Users/asbri/esp-idf/components/bootloader /Users/asbri/esp-idf/components/bootloader_support /Users/asbri/esp-idf/components/efuse /Users/asbri/esp-idf/components/esp_app_format /Users/asbri/esp-idf/components/esp_bootloader_format /Users/asbri/esp-idf/components/esp_common /Users/asbri/esp-idf/components/esp_hw_support /Users/asbri/esp-idf/components/esp_rom /Users/asbri/esp-idf/components/esp_security /Users/asbri/esp-idf/components/esp_system /Users/asbri/esp-idf/components/esptool_py /Users/asbri/esp-idf/components/freertos /Users/asbri/esp-idf/components/hal /Users/asbri/esp-idf/components/log /Users/asbri/esp-idf/components/bootloader/subproject/main /Users/asbri/esp-idf/components/bootloader/subproject/components/micro-ecc /Users/asbri/esp-idf/components/newlib /Users/asbri/esp-idf/components/partition_table /Users/asbri/esp-idf/components/soc /Users/asbri/esp-idf/components/spi_flash /Users/asbri/esp-idf/components/xtensa
+-- Configuring done (1.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/asbri/esp-idf/my_webserver/build/bootloader
+[1/2] cd /Users/asbri/esp-idf/my_webserver/build/bootloader/esp-idf/esptool_py && /Users/asbri/.espressif/python_env/idf6.0_py3.13_env/bin/python /Users/asbri/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/asbri/esp-idf/my_webserver/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[3/10] No install step for 'bootloader'
+[4/10] Completed 'bootloader'
+[5/10] Generating esp-idf/esp_system/ld/sections.ld
+[6/10] Linking CXX executable my_webserver.elf
+[7/10] Generating binary image from built executable
+esptool.py v4.9.dev8
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/asbri/esp-idf/my_webserver/build/my_webserver.bin
+[8/10] cd /Users/asbri/esp-idf/my_webserver/build/esp-idf/esptool_py && /Users/asbri/.espressif/python_env/idf6.0_py3.13_env/bin/python /Users/asbri/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/asbri/esp-idf/my_webserver/build/partition_table/partition-table.bin /Users/asbri/esp-idf/my_webserver/build/my_webserver.bin
+my_webserver.bin binary size 0xe8d40 bytes. Smallest app partition is 0x100000 bytes. 0x172c0 bytes (9%) free.
+[8/10] cd /Users/asbri/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/asbri/esp-idf -D "SERIAL_TOOL=/Users/asbri/.espressif/python_env/idf6.0_py3.13_env/bin/python;;/Users/asbri/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/asbri/esp-idf/my_webserver/build -P /Users/asbri/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/cu.SLAB_USBtoUART -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 my_webserver.bin 0x8000 partition_table/partition-table.bin 0x110000 spiffs.bin
+esptool.py v4.9.dev8
+Serial port /dev/cu.SLAB_USBtoUART
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: cc:db:a7:68:6f:f0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x00110000 to 0x001fffff...
+SHA digest in image updated
+Compressed 26240 bytes to 16497...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075e1... (100 %)
+Wrote 26240 bytes (16497 compressed) at 0x00001000 in 0.6 seconds (effective 379.8 kbit/s)...
+Hash of data verified.
+Compressed 953664 bytes to 599697...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001caaf... (5 %)
+Writing at 0x00027a56... (8 %)
+Writing at 0x00031127... (10 %)
+Writing at 0x00038e06... (13 %)
+Writing at 0x0003e7fc... (16 %)
+Writing at 0x00044733... (18 %)
+Writing at 0x0004a4e5... (21 %)
+Writing at 0x0004ff2e... (24 %)
+Writing at 0x00055cb3... (27 %)
+Writing at 0x0005b747... (29 %)
+Writing at 0x00061432... (32 %)
+Writing at 0x00067221... (35 %)
+Writing at 0x0006ce51... (37 %)
+Writing at 0x00072d9e... (40 %)
+Writing at 0x00078ea7... (43 %)
+Writing at 0x0007eac9... (45 %)
+Writing at 0x00084dc2... (48 %)
+Writing at 0x00089fa0... (51 %)
+Writing at 0x0008f349... (54 %)
+Writing at 0x00094aeb... (56 %)
+Writing at 0x0009a324... (59 %)
+Writing at 0x0009f5f9... (62 %)
+Writing at 0x000a4dd0... (64 %)
+Writing at 0x000aa98d... (67 %)
+Writing at 0x000b02ba... (70 %)
+Writing at 0x000b6130... (72 %)
+Writing at 0x000bc325... (75 %)
+Writing at 0x000c1f13... (78 %)
+Writing at 0x000c7a1c... (81 %)
+Writing at 0x000cd489... (83 %)
+Writing at 0x000d3385... (86 %)
+Writing at 0x000dd408... (89 %)
+Writing at 0x000e3fa2... (91 %)
+Writing at 0x000e9fd2... (94 %)
+Writing at 0x000f0287... (97 %)
+Writing at 0x000f54bc... (100 %)
+Wrote 953664 bytes (599697 compressed) at 0x00010000 in 14.6 seconds (effective 523.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 118...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (118 compressed) at 0x00008000 in 0.1 seconds (effective 409.9 kbit/s)...
+Hash of data verified.
+Compressed 983040 bytes to 4292...
+Writing at 0x00110000... (100 %)
+Wrote 983040 bytes (4292 compressed) at 0x00110000 in 2.8 seconds (effective 2785.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
